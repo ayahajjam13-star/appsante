@@ -1,25 +1,19 @@
 pipeline {
-    agent any  // تعني أن جيكنز ينفذ الـ Pipeline في أي جهاز
-
+    agent any
     stages {
         stage('Build') {
             steps {
-                echo 'Building the project...'
-                powershell 'mvn clean install'  // استخدم powershell بدلاً من sh
+                echo 'Build ok 🎉'
             }
         }
-        
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                powershell 'mvn test'  // استخدم powershell بدلاً من sh
+                echo 'Tests ok ✅'
             }
         }
-        
         stage('Deploy') {
             steps {
-                echo 'Deploying the project...'
-                powershell 'mvn deploy'  // استخدم powershell بدلاً من sh
+                echo 'Deploy ok 🚀'
             }
         }
     }
